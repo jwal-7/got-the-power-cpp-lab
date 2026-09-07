@@ -15,7 +15,11 @@ FetchContent_Declare(
 
 FetchContent_MakeAvailable(Catch2)
 
-add_executable(factorial_test tests/factorial_test.cpp src/factorial.cpp)
-add_executable(main main.cpp src/factorial.cpp)
+add_executable(power_calc_test_naive tests/power_calc_test_naive.cpp src/power_calc.cpp)
+add_executable(power_calc_test_optimized tests/power_calc_test_optimized.cpp src/power_calc.cpp)
+add_executable(power_calc_test_unoptimized tests/power_calc_test_unoptimized.cpp src/power_calc.cpp)
+add_executable(main main.cpp src/power_calc.cpp)
 
-target_link_libraries(factorial_test PRIVATE Catch2::Catch2WithMain)
+target_link_libraries(power_calc_test_naive PRIVATE Catch2::Catch2WithMain)
+target_link_libraries(power_calc_test_optimized PRIVATE Catch2::Catch2WithMain)
+target_link_libraries(power_calc_test_unoptimized PRIVATE Catch2::Catch2WithMain)
